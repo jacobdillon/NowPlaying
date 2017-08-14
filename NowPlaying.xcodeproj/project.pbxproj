@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA66D06E299625FED981406A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66D2D3D8A1671411B8D9FD /* ViewController.swift */; };
 		BA66D2D169D146053A96634E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66D706F9966404F7374A43 /* AppDelegate.swift */; };
 		BA66D500CB796AA2B4A15306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA66D39CFA618EBA347A77C2 /* Assets.xcassets */; };
 		BA66DD472E8F33AA1FEBFB1B /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66DB77ADE9097004D6FF67 /* StatusMenuController.swift */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		BA66D1A2420F94A77DA86977 /* NowPlaying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowPlaying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA66D1FAA34672BC6D0427A1 /* SpotifyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyState.swift; sourceTree = "<group>"; };
-		BA66D2D3D8A1671411B8D9FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA66D32AA7718AA0798F4E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		BA66D39CFA618EBA347A77C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA66D3EF002B7276BE19B760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +44,6 @@
 				BA66D39CFA618EBA347A77C2 /* Assets.xcassets */,
 				BA66D706F9966404F7374A43 /* AppDelegate.swift */,
 				BA66DDF52FEF8D99FEB45C52 /* Main.storyboard */,
-				BA66D2D3D8A1671411B8D9FD /* ViewController.swift */,
 				BA66DB77ADE9097004D6FF67 /* StatusMenuController.swift */,
 				BA66D9FEC7C4A31A1BEA1D31 /* SpotifyCallController.swift */,
 				BA66D1FAA34672BC6D0427A1 /* SpotifyState.swift */,
@@ -133,7 +130,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA66D2D169D146053A96634E /* AppDelegate.swift in Sources */,
-				BA66D06E299625FED981406A /* ViewController.swift in Sources */,
 				BA66DD472E8F33AA1FEBFB1B /* StatusMenuController.swift in Sources */,
 				BA66DEB84BE2E0D15352CA36 /* SpotifyCallController.swift in Sources */,
 				BA66DF9AFC01D30E804BDF9B /* SpotifyState.swift in Sources */,
