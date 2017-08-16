@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     let statusMenuController = StatusMenuController()
-    Timer.scheduledTimer(timeInterval: 0.35, target: statusMenuController, selector: #selector(statusMenuController.updateStatusItem), userInfo: nil, repeats: true)
+    Timer.scheduledTimer(timeInterval: 1, target: statusMenuController, selector: #selector(statusMenuController.updateStatusItem), userInfo: nil, repeats: true)
   }
 
 }
