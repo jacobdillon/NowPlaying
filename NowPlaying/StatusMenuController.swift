@@ -9,16 +9,18 @@ class StatusMenuController: NSObject {
 
   var statusBar = NSStatusBar.system()
   var statusBarItem = NSStatusItem()
-  var menuItem = NSMenuItem()
+  var quitItem = NSMenuItem()
 
   override init() {
+    super.init()
 
     statusBarItem = statusBar.statusItem(withLength: NSVariableStatusItemLength)
     statusBarItem.highlightMode = true
 
     statusBarItem.menu = NSMenu()
 
-    let quitItem: NSMenuItem = NSMenuItem(title: "Quit", action: #selector(quit(_:)), keyEquivalent: "")
+    quitItem = NSMenuItem(title: "Quit", action: #selector(quit(_:)), keyEquivalent: "")
+    quitItem.target = self
 
     statusBarItem.menu!.addItem(quitItem)
   }
