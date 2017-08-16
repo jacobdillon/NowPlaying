@@ -10,6 +10,9 @@ class StatusMenuController: NSObject {
   var statusBar = NSStatusBar.system()
   var statusBarItem = NSStatusItem()
   var quitItem = NSMenuItem()
+  var name = String()
+  var artist = String()
+  var playingState: SpotifyState = SpotifyState.paused
 
   override init() {
     super.init()
@@ -34,15 +37,35 @@ class StatusMenuController: NSObject {
     let playingState = spotifyCallController.getCurrentPlayingStatus()
 
     if(name != nil && artist != nil && playingState != nil) {
-      if(playingState == SpotifyState.playing) {
-        statusBarItem.title = artist! + " - " + name!
-      } else if(playingState == SpotifyState.paused) {
-        statusBarItem.title = "[" + artist! + " - " + name! + "]"
+      if(infoChange(name: name!, artist: artist!, playingState: playingState!)) {
+
+        if(playingState == SpotifyState.playing) {
+          statusBarItem.title = self.artist + " - " + self.name
+        } else if(playingState == SpotifyState.paused) {
+          statusBarItem.title = "[" + self.artist + " - " + self.name + "]"
+        }
       }
 
-      statusBarItem.isVisible = true;
+      if(!statusBarItem.isVisible) {
+        statusBarItem.isVisible = true
+      }
     } else {
-      statusBarItem.isVisible = false;
+      if(statusBarItem.isVisible) {
+        statusBarItem.isVisible = false
+      }
+    }
+  }
+
+  func infoChange(name: String, artist: String, playingState: SpotifyState) -> Bool {
+
+    if(name != self.name || artist != self.artist || playingState != self.playingState) {
+      self.name = name
+      self.artist = artist
+      self.playingState = playingState
+
+      return true
+    } else {
+      return false
     }
   }
 
