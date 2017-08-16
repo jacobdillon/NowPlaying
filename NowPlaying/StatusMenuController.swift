@@ -19,7 +19,7 @@ class StatusMenuController: NSObject {
 
     statusBarItem.menu = NSMenu()
 
-    quitItem = NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "")
+    quitItem = NSMenuItem(title: "Quit", action: #selector(quit(_:)), keyEquivalent: "")
     quitItem.target = self
 
     statusBarItem.menu!.addItem(quitItem)
@@ -46,7 +46,7 @@ class StatusMenuController: NSObject {
     }
   }
 
-  func quit() {
+  func quit(_ sender: NSMenuItem) {
 
     NSApplication.shared().terminate(self)
   }
