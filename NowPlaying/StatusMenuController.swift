@@ -32,28 +32,40 @@ class StatusMenuController: NSObject {
 
     let spotifyCallController = SpotifyCallController()
 
-    let returnedName = spotifyCallController.getCurrentTrackProperty(property: "name")
-    let returnedArtist = spotifyCallController.getCurrentTrackProperty(property: "artist")
-    let returnedPlayingState = spotifyCallController.getCurrentPlayingStatus()
+    let name = spotifyCallController.getCurrentTrackProperty(property: "name")
+    let artist = spotifyCallController.getCurrentTrackProperty(property: "artist")
+    let playingState = spotifyCallController.getCurrentPlayingStatus()
 
-    if(returnedName != nil && returnedArtist != nil && returnedPlayingState != nil) {
-
-      if(returnedName != name || returnedArtist != artist || returnedPlayingState != playingState) {
-
-        name = returnedName!
-        artist = returnedArtist!
-        playingState = returnedPlayingState!
+    if(name != nil && artist != nil && playingState != nil) {
+      if(infoChange(name: name!, artist: artist!, playingState: playingState!)) {
 
         if(playingState == SpotifyState.playing) {
-          statusBarItem.title = artist + " - " + name
+          statusBarItem.title = self.artist + " - " + self.name
         } else if(playingState == SpotifyState.paused) {
-          statusBarItem.title = "[" + artist + " - " + name + "]"
+          statusBarItem.title = "[" + self.artist + " - " + self.name + "]"
         }
       }
 
-      statusBarItem.isVisible = true;
+      if(!statusBarItem.isVisible) {
+        statusBarItem.isVisible = true
+      }
     } else {
-      statusBarItem.isVisible = false;
+      if(statusBarItem.isVisible) {
+        statusBarItem.isVisible = false
+      }
+    }
+  }
+
+  func infoChange(name: String, artist: String, playingState: SpotifyState) -> Bool {
+
+    if(name != self.name || artist != self.artist || playingState != self.playingState) {
+      self.name = name
+      self.artist = artist
+      self.playingState = playingState
+
+      return true
+    } else {
+      return false
     }
   }
 
